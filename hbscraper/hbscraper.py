@@ -214,6 +214,8 @@ class hbscraper(object):
       shop_response = ritem.find('div', attrs = {'class', 'mT20 mH10 pV5 pH9 bdGray'})
       if shop_response:
         record.append(shop_response.find('p', attrs = {'class', 'mT10 wwbw'}).get_text())
+      else:
+        record.append('')
 
       logging.debug(record)
       self.resultset.append(record)
